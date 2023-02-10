@@ -1,8 +1,8 @@
 {
   "kind": "collectionType",
-  "collectionName": "administrators",
+  "collectionName": "domains",
   "info": {
-    "name": "Administrator"
+    "name": "Domain"
   },
   "options": {
     "increments": true,
@@ -15,26 +15,25 @@
       "type": "uid",
       "required": true
     },
-    "firstName": {
+    "TLD": {
       "type": "string",
       "required": true
     },
-    "lastName": {
-      "type": "string",
+    "description": {
+      "type": "text",
       "required": true
     },
-    "email": {
-      "type": "email",
-      "required": true,
-      "unique": true
+    "price": {
+      "type": "decimal",
+      "required": true
     },
-    "password": {
-      "type": "password",
-      "required": true,
-      "unique": true
+    "registration": {
+      "type": "datetime",
+      "required": true
     },
-    "role": {
-      "type": "string"
+    "expiration": {
+      "type": "datetime",
+      "required": true
     }
   }
 }

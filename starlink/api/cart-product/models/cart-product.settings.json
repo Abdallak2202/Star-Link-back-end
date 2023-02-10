@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "cart_products",
+  "info": {
+    "name": "Cart_Product",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "cloud_servers": {
+      "collection": "cloud-server"
+    },
+    "dedicated_servers": {
+      "collection": "dedicated-server"
+    },
+    "housings": {
+      "collection": "housing"
+    },
+    "domains": {
+      "collection": "domain"
+    }
+  }
+}

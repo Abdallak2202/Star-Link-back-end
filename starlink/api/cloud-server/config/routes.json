@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/cloud-servers",
+      "handler": "cloud-server.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/cloud-servers/count",
+      "handler": "cloud-server.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/cloud-servers/:id",
+      "handler": "cloud-server.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/cloud-servers",
+      "handler": "cloud-server.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/cloud-servers/:id",
+      "handler": "cloud-server.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/cloud-servers/:id",
+      "handler": "cloud-server.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

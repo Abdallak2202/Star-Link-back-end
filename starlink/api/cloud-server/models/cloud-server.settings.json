@@ -1,0 +1,48 @@
+{
+  "kind": "collectionType",
+  "collectionName": "cloud_servers",
+  "info": {
+    "name": "Cloud Server",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "ID": {
+      "type": "uid",
+      "required": true
+    },
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "price": {
+      "type": "decimal",
+      "required": true
+    },
+    "processor": {
+      "type": "integer",
+      "required": true
+    },
+    "RAM": {
+      "type": "integer",
+      "required": true
+    },
+    "SSD": {
+      "type": "integer",
+      "required": true
+    },
+    "transfer": {
+      "type": "integer",
+      "required": true
+    }
+  }
+}

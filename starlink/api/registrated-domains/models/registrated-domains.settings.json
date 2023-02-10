@@ -1,8 +1,8 @@
 {
   "kind": "collectionType",
-  "collectionName": "administrators",
+  "collectionName": "registrated_domains",
   "info": {
-    "name": "Administrator"
+    "name": "Registrated Domains"
   },
   "options": {
     "increments": true,
@@ -11,30 +11,18 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "ID": {
-      "type": "uid",
-      "required": true
-    },
-    "firstName": {
+    "name": {
       "type": "string",
       "required": true
     },
-    "lastName": {
+    "TLD": {
       "type": "string",
       "required": true
     },
-    "email": {
-      "type": "email",
+    "url": {
+      "type": "string",
       "required": true,
       "unique": true
-    },
-    "password": {
-      "type": "password",
-      "required": true,
-      "unique": true
-    },
-    "role": {
-      "type": "string"
     }
   }
 }

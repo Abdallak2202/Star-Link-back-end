@@ -1,0 +1,44 @@
+{
+  "kind": "collectionType",
+  "collectionName": "orders",
+  "info": {
+    "name": "Order",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "ID": {
+      "type": "uid",
+      "required": true
+    },
+    "cart": {
+      "model": "cart"
+    },
+    "payment": {
+      "type": "string",
+      "required": true
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "Completed",
+        "Pending",
+        "Error"
+      ],
+      "default": "Pending",
+      "required": true
+    },
+    "created": {
+      "type": "datetime",
+      "required": true
+    },
+    "updated": {
+      "type": "datetime"
+    }
+  }
+}

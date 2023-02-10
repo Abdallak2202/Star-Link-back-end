@@ -1,0 +1,43 @@
+{
+  "kind": "collectionType",
+  "collectionName": "housings",
+  "info": {
+    "name": "Housing"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "ID": {
+      "type": "uid",
+      "required": true
+    },
+    "location": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "price": {
+      "type": "decimal",
+      "required": true
+    },
+    "floorspace": {
+      "type": "float",
+      "required": true
+    },
+    "racks": {
+      "type": "integer",
+      "required": true
+    },
+    "consumption": {
+      "type": "float",
+      "required": true
+    }
+  }
+}

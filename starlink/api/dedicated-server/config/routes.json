@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/dedicated-servers",
+      "handler": "dedicated-server.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/dedicated-servers/count",
+      "handler": "dedicated-server.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/dedicated-servers/:id",
+      "handler": "dedicated-server.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/dedicated-servers",
+      "handler": "dedicated-server.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/dedicated-servers/:id",
+      "handler": "dedicated-server.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/dedicated-servers/:id",
+      "handler": "dedicated-server.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

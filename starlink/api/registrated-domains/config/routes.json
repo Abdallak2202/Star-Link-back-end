@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/registrated-domains",
+      "handler": "registrated-domains.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/registrated-domains/count",
+      "handler": "registrated-domains.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/registrated-domains/:id",
+      "handler": "registrated-domains.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/registrated-domains",
+      "handler": "registrated-domains.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/registrated-domains/:id",
+      "handler": "registrated-domains.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/registrated-domains/:id",
+      "handler": "registrated-domains.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

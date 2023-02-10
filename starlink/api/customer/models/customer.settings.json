@@ -1,8 +1,9 @@
 {
   "kind": "collectionType",
-  "collectionName": "administrators",
+  "collectionName": "customers",
   "info": {
-    "name": "Administrator"
+    "name": "Customer",
+    "description": ""
   },
   "options": {
     "increments": true,
@@ -15,13 +16,16 @@
       "type": "uid",
       "required": true
     },
-    "firstName": {
+    "username": {
       "type": "string",
-      "required": true
+      "required": true,
+      "unique": true
+    },
+    "firstName": {
+      "type": "string"
     },
     "lastName": {
-      "type": "string",
-      "required": true
+      "type": "string"
     },
     "email": {
       "type": "email",
@@ -30,11 +34,23 @@
     },
     "password": {
       "type": "password",
+      "required": true
+    },
+    "adress": {
+      "type": "text",
+      "required": true
+    },
+    "phone": {
+      "type": "string",
       "required": true,
       "unique": true
     },
-    "role": {
-      "type": "string"
+    "cart": {
+      "via": "customer",
+      "model": "cart"
+    },
+    "orders": {
+      "collection": "order"
     }
   }
 }

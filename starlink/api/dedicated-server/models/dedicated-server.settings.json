@@ -1,0 +1,48 @@
+{
+  "kind": "collectionType",
+  "collectionName": "dedicated_servers",
+  "info": {
+    "name": "Dedicated Server",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "ID": {
+      "type": "uid",
+      "required": true
+    },
+    "brand": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "price": {
+      "type": "decimal",
+      "required": true
+    },
+    "OS": {
+      "type": "string",
+      "required": true
+    },
+    "processor": {
+      "type": "string",
+      "required": true
+    },
+    "RAM": {
+      "type": "integer",
+      "required": true
+    },
+    "SSD": {
+      "type": "integer",
+      "required": true
+    }
+  }
+}
