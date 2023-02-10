@@ -12,10 +12,6 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "ID": {
-      "type": "uid",
-      "required": true
-    },
     "cart": {
       "model": "cart"
     },
