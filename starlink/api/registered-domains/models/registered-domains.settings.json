@@ -1,8 +1,9 @@
 {
   "kind": "collectionType",
-  "collectionName": "registrated_domains",
+  "collectionName": "registered_domains",
   "info": {
-    "name": "Registrated Domains"
+    "name": "Registered Domains",
+    "description": ""
   },
   "options": {
     "increments": true,
@@ -15,14 +16,13 @@
       "type": "string",
       "required": true
     },
-    "TLD": {
+    "tld": {
       "type": "string",
       "required": true
     },
     "url": {
       "type": "string",
-      "required": true,
-      "unique": true
+      "required": true
     }
   }
 }

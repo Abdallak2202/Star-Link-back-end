@@ -2,48 +2,48 @@
   "routes": [
     {
       "method": "GET",
-      "path": "/registrated-domains",
-      "handler": "registrated-domains.find",
+      "path": "/registered-domains",
+      "handler": "registered-domains.find",
       "config": {
         "policies": []
       }
     },
     {
       "method": "GET",
-      "path": "/registrated-domains/count",
-      "handler": "registrated-domains.count",
+      "path": "/registered-domains/count",
+      "handler": "registered-domains.count",
       "config": {
         "policies": []
       }
     },
     {
       "method": "GET",
-      "path": "/registrated-domains/:id",
-      "handler": "registrated-domains.findOne",
+      "path": "/registered-domains/:id",
+      "handler": "registered-domains.findOne",
       "config": {
         "policies": []
       }
     },
     {
       "method": "POST",
-      "path": "/registrated-domains",
-      "handler": "registrated-domains.create",
+      "path": "/registered-domains",
+      "handler": "registered-domains.create",
       "config": {
         "policies": []
       }
     },
     {
       "method": "PUT",
-      "path": "/registrated-domains/:id",
-      "handler": "registrated-domains.update",
+      "path": "/registered-domains/:id",
+      "handler": "registered-domains.update",
       "config": {
         "policies": []
       }
     },
     {
       "method": "DELETE",
-      "path": "/registrated-domains/:id",
-      "handler": "registrated-domains.delete",
+      "path": "/registered-domains/:id",
+      "handler": "registered-domains.delete",
       "config": {
         "policies": []
       }
