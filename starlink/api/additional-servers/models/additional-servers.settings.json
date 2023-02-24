@@ -1,0 +1,39 @@
+{
+  "kind": "collectionType",
+  "collectionName": "additional_servers",
+  "info": {
+    "name": "Additional Servers"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "price": {
+      "type": "decimal",
+      "required": true
+    },
+    "bandwidth": {
+      "type": "integer",
+      "required": true
+    },
+    "ram": {
+      "type": "integer",
+      "required": true
+    },
+    "storage": {
+      "type": "integer",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    }
+  }
+}
