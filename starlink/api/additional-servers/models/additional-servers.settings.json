@@ -2,7 +2,8 @@
   "kind": "collectionType",
   "collectionName": "additional_servers",
   "info": {
-    "name": "Additional Servers"
+    "name": "Additional Servers",
+    "description": ""
   },
   "options": {
     "increments": true,
@@ -33,6 +34,11 @@
     },
     "description": {
       "type": "text",
+      "required": true
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "name",
       "required": true
     }
   }

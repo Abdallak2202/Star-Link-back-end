@@ -39,6 +39,11 @@
     "SSD": {
       "type": "integer",
       "required": true
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "brand",
+      "required": true
     }
   }
 }
