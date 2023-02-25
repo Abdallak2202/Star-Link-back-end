@@ -31,6 +31,10 @@
     "expiration": {
       "type": "datetime",
       "required": true
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "TLD"
     }
   }
 }
