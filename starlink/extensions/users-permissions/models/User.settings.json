@@ -85,11 +85,11 @@
       "required": false,
       "pluginOptions": {}
     },
-    "cart": {
-      "model": "cart"
-    },
     "orders": {
       "collection": "order"
+    },
+    "cart": {
+      "model": "cart"
     }
   }
 }
