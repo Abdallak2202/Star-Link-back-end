@@ -1,11 +1,10 @@
-  module.exports = {
+module.exports = {
     lifecycles: {
       async afterCreate(result, data) {
-        await strapi.services.cart.create({
+        const cart = await strapi.services.cart.create({
             user: result.id
         });
-        await strapi.query('user', 'users-permissions').update({ id: result.id }, { cart: cart.id });
+        await strapi.query('User', 'users-permissions').update({ id: result.id }, { cart: cart.id });
       },
     },
-  };
-  
+  };  
