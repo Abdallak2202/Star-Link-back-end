@@ -89,7 +89,8 @@
       "collection": "order"
     },
     "cart": {
-      "model": "cart"
+      "model": "cart",
+      "via": "user"
     }
   }
 }

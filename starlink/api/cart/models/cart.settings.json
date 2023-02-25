@@ -8,7 +8,7 @@
   "options": {
     "increments": true,
     "timestamps": true,
-    "draftAndPublish": true
+    "draftAndPublish": false
   },
   "pluginOptions": {},
   "attributes": {
@@ -18,6 +18,11 @@
     },
     "cart_products": {
       "collection": "cart-product"
+    },
+    "user": {
+      "via": "cart",
+      "plugin": "users-permissions",
+      "model": "user"
     }
   }
 }
