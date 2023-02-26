@@ -1,13 +1,21 @@
 module.exports = {
   lifecycles: {
     async afterCreate(result, data) {
-      console.log("afterCreate method invoked")
-      const total = 0; // initial total value
-      const cart = await strapi.services.cart.create({
-        user: result._doc.id,
-        total: total
-      });
-      await strapi.query('User', 'users-permissions').update({ id: result._doc.id }, { cart: cart.id });
-    }
+      const { id } = result;
+    
+      try {
+        const cart = await strapi.services.cart.create({
+          total: 0,
+          user: id,
+        });
+    
+        await strapi.query('user', 'users-permissions').update(
+          { id },
+          { cart: cart.id }
+        );
+      } catch (err) {
+        strapi.log.error(err);
+      }
+    }    
   }
 };
