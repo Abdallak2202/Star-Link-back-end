@@ -33,6 +33,11 @@
       }
     },
     {
+      "method": "POST",
+      "path": "/carts/add-to-cart",
+      "handler": "cart.addToCart"
+    },
+    {
       "method": "PUT",
       "path": "/carts/:id",
       "handler": "cart.update",
