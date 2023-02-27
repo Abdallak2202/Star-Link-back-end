@@ -35,6 +35,11 @@
     "slug": {
       "type": "uid",
       "targetField": "TLD"
+    },
+    "service": {
+      "type": "string",
+      "default": "Domain",
+      "required": true
     }
   }
 }

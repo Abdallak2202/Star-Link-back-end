@@ -44,6 +44,11 @@
       "type": "uid",
       "targetField": "name",
       "required": true
+    },
+    "service": {
+      "type": "string",
+      "required": true,
+      "default": "Cloud Server"
     }
   }
 }

@@ -44,6 +44,11 @@
       "type": "uid",
       "targetField": "brand",
       "required": true
+    },
+    "service": {
+      "type": "string",
+      "required": true,
+      "default": "Dedicated Server"
     }
   }
 }

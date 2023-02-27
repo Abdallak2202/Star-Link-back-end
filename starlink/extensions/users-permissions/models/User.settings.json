@@ -91,6 +91,10 @@
     "cart": {
       "model": "cart",
       "via": "user"
+    },
+    "reviews": {
+      "via": "user",
+      "collection": "reviews"
     }
   }
 }
