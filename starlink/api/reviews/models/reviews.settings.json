@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "reviews",
+  "info": {
+    "name": "Reviews",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "user": {
+      "plugin": "users-permissions",
+      "model": "user",
+      "via": "reviews"
+    },
+    "service": {
+      "type": "string",
+      "required": true
+    },
+    "stars": {
+      "type": "integer",
+      "required": true,
+      "max": 5
+    },
+    "comment": {
+      "type": "text"
+    }
+  }
+}

@@ -40,6 +40,11 @@
       "type": "uid",
       "targetField": "name",
       "required": true
+    },
+    "service": {
+      "type": "string",
+      "default": "Housing",
+      "required": true
     }
   }
 }
