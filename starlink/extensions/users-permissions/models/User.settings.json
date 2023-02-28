@@ -89,8 +89,8 @@
       "collection": "order"
     },
     "cart": {
-      "model": "cart",
-      "via": "user"
+      "via": "user",
+      "model": "cart"
     },
     "reviews": {
       "via": "user",

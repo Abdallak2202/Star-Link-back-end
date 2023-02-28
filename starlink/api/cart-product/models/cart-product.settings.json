@@ -23,6 +23,10 @@
     },
     "domains": {
       "collection": "domain"
+    },
+    "cart": {
+      "via": "cart_product",
+      "model": "cart"
     }
   }
 }

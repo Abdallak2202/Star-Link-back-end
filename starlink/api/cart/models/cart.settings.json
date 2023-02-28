@@ -16,8 +16,9 @@
       "type": "decimal",
       "required": true
     },
-    "cart_products": {
-      "collection": "cart-product"
+    "cart_product": {
+      "model": "cart-product",
+      "via": "cart"
     },
     "user": {
       "via": "cart",
