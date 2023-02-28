@@ -7,6 +7,7 @@
 
 module.exports = {
     async addToCart(ctx) {
+        console.log("successfully entered the function");
         console.log(ctx);
         console.log(ctx.request.body);
         const { cartData } = ctx.request.body;

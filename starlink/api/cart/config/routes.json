@@ -35,7 +35,10 @@
     {
       "method": "POST",
       "path": "/carts/add-to-cart",
-      "handler": "cart.addToCart"
+      "handler": "cart.addToCart",
+      "config": {
+        "policies": []
+      }
     },
     {
       "method": "PUT",
