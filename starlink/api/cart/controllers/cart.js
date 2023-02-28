@@ -8,14 +8,14 @@
 module.exports = {
     async addToCart(ctx) {
         console.log("successfully entered the function");
-        console.log(ctx);
-        console.log(ctx.request.body);
-        const { cartData } = ctx.request.body;
-        console.log(cartData);
+        
+        const { cookies, cartData } = ctx.request.body;
+        console.log("COOKIES", cookies);
+        console.log("CART DATA", cartData);
   
         // Parse the user ID from the session cookies
         const userId = ctx.session.passport.user;
-        console.log(userId);
+        console.log("USER ID", userId);
   
         // Retrieve the user's cart ID from the database
         const cart = await strapi.services.cart.findOne({ user: userId }); //id
