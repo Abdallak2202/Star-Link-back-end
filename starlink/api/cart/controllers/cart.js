@@ -7,43 +7,91 @@
 
 module.exports = {
     async addToCart(ctx) {
-        console.log("successfully entered the function");
-        
-        const { cookies, cartData } = ctx.request.body;
-        console.log("COOKIES", cookies);
-        console.log("CART DATA", cartData);
-  
-        // Parse the user ID from the session cookies
-        const userId = ctx.session.passport.user;
-        console.log("USER ID", userId);
-  
-        // Retrieve the user's cart ID from the database
-        const cart = await strapi.services.cart.findOne({ user: userId }); //id
-  
-        // Loop through the cartData and create a new CartProduct entry for each product
-        for (const { productId, quantity } of cartData) { // not a loop, it's a single entry in cartproduct
-            // Retrieve the relevant Product model for the given product ID
-            const product = await strapi.services.product.findOne({ id: productId });
-  
-            // after I have all the services, make the create method below
-            // Create a new CartProduct entry for the current product
-            await strapi.services.cartproduct.create({
-            cart: cart.id,
-            product: product.id,
-            // product would be each service
-            quantity, // there's not quantity
-            price: product.price,
-            // Any other relevant data
-          });
-        }
-  
-        // Send a response indicating success
-        ctx.send({ message: 'Cart updated successfully' });
-      }
-    };
-  
+        try {
+            console.log("successfully entered the function");
+    
+            const { cookies, cartData } = ctx.request.body;
+            console.log("COOKIES", cookies);
+            console.log("CART DATA", cartData);
+      
+            // Parse the user ID from the session cookies
+            const userId = cookies.id;
+            console.log("USER ID", userId);
+      
+            // Retrieve the user's cart from the database
+            const cart = await strapi.services.cart.findOne({ user: userId });
+            console.log("CART", cart);
+    
+            // Define the services the entry might have
+            var cloudServers=[];
+            var dedicatedServers=[];
+            var domains=[];
+            var housings=[];
+    
+            // Define the total the cart will have
+            var total=[];
+    
+            // Introduce the products id in their respective array
+            // And push the prices in the total array
+            for (let i=0; i<cartData.length; i++) {
+                if (cartData[i].service==="Cloud Server") {
+                    cloudServers.push(cartData[i].id);
+                    total.push(cartData[i].price);
+                }
+                else if (cartData[i].service==="Dedicated Server") {
+                    dedicatedServers.push(cartData[i].id);
+                    total.push(cartData[i].price);
+                }
+                else if (cartData[i].service==="Domain") {
+                    domains.push(cartData[i].id);
+                    total.push(cartData[i].price);
+                }
+                else if (cartData[i].service==="Housing") {
+                    housings.push(cartData[i].id);
+                    total.push(cartData[i].price);
+                }
+            }
+    
+            // Log the product ids to check
+    ///////////////////////////////////////////////////////////////////////////
+            console.log("CLOUD SERVERS", cloudServers);
+            console.log("DEDICATED SERVERS", dedicatedServers);
+            console.log("DOMAINS", domains);
+            console.log("HOUSINGS", housings);
+    ///////////////////////////////////////////////////////////////////////////
+    
+            // Calculate the total price for all the products
+            var totalCart= total.reduce((acc, current) => {
+                return acc+current;
+            });
+            console.log("TOTAL CART", totalCart);
+    
+            // Update the cart with the total price
+            const cartReady= await strapi.query('cart').update({ id: cart.id }, { total: totalCart });
 
-    /* const servicio1= await.strapi.services.servicio1.findOne({
-        id: servicio1.id
-    }); */
-    // repeat that with each service model, maybe with a try catch statement
+            console.log("CART READY", cartReady);
+    
+    
+            // Create an entry in the join table (the cart with its services)
+            console.log("STRAPI SERVICES CARTPRODUCT", strapi.services.cartproduct);
+
+            await strapi.services.cartproduct.create({
+                cloud_servers: cloudServers,
+                dedicated_servers: dedicatedServers,
+                domains: domains,
+                housings: housings,
+                cart: cart.id,
+            })
+    
+    
+            ctx.send({ message: 'Cart updated successfully' });
+
+            console.log("CART AFTER", cart);
+            console.log("CART READY AFTER", cartReady);
+          }
+        catch(e) {
+            console.log(e);
+            ctx.response.status = 500;
+            ctx.response.body = { error: "Internal server error..." };
+        }
+    }};
