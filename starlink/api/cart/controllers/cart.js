@@ -55,11 +55,9 @@ module.exports = {
                     total.push(cartSet[i].price);
                 }
             }
-
-            // the repeated values can affect the price, fix that using set const uniqueArr = [...new Set(arr)];
     
-            // Log the product ids to check
     ///////////////////////////////////////////////////////////////////////////
+            // Log the products id to check
             console.log("CLOUD SERVERS", cloudServers);
             console.log("DEDICATED SERVERS", dedicatedServers);
             console.log("DOMAINS", domains);
@@ -74,13 +72,10 @@ module.exports = {
     
             // Update the cart with the total price
             const cartReady= await strapi.query('cart').update({ id: cart.id }, { total: totalCart });
-
             console.log("CART READY", cartReady);
     
     
             // Create an entry in the join table (the cart with its services)
-            console.log("STRAPI SERVICES CARTPRODUCT", strapi.services.cartproduct);
-
             await strapi.services.cartproduct.create({
                 cloud_servers: cloudServers,
                 dedicated_servers: dedicatedServers,
@@ -91,9 +86,7 @@ module.exports = {
     
     
             ctx.send({ message: 'Cart updated successfully' });
-
-            console.log("CART AFTER", cart);
-            console.log("CART READY AFTER", cartReady);
+            
           }
         catch(e) {
             console.log(e);
