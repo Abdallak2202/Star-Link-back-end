@@ -24,6 +24,10 @@
       "via": "cart",
       "plugin": "users-permissions",
       "model": "user"
+    },
+    "cartproduct": {
+      "via": "cart",
+      "model": "cartproduct"
     }
   }
 }
