@@ -13,6 +13,10 @@ module.exports = {
             const { cookies, cartData } = ctx.request.body;
             console.log("COOKIES", cookies);
             console.log("CART DATA", cartData);
+
+            // Retrieve the unique services only, to avoid product duplication
+            const cartSet= Array.from(new Set(cartData.map(JSON.stringify)), JSON.parse);
+            console.log("CART SET", cartSet);
       
             // Parse the user ID from the session cookies
             const userId = cookies.id;
@@ -33,24 +37,26 @@ module.exports = {
     
             // Introduce the products id in their respective array
             // And push the prices in the total array
-            for (let i=0; i<cartData.length; i++) {
-                if (cartData[i].service==="Cloud Server") {
-                    cloudServers.push(cartData[i].id);
-                    total.push(cartData[i].price);
+            for (let i=0; i<cartSet.length; i++) {
+                if (cartSet[i].service==="Cloud Server") {
+                    cloudServers.push(cartSet[i].id);
+                    total.push(cartSet[i].price);
                 }
-                else if (cartData[i].service==="Dedicated Server") {
-                    dedicatedServers.push(cartData[i].id);
-                    total.push(cartData[i].price);
+                else if (cartSet[i].service==="Dedicated Server") {
+                    dedicatedServers.push(cartSet[i].id);
+                    total.push(cartSet[i].price);
                 }
                 else if (cartData[i].service==="Domain") {
-                    domains.push(cartData[i].id);
-                    total.push(cartData[i].price);
+                    domains.push(cartSet[i].id);
+                    total.push(cartSet[i].price);
                 }
                 else if (cartData[i].service==="Housing") {
-                    housings.push(cartData[i].id);
-                    total.push(cartData[i].price);
+                    housings.push(cartSet[i].id);
+                    total.push(cartSet[i].price);
                 }
             }
+
+            // the repeated values can affect the price, fix that using set const uniqueArr = [...new Set(arr)];
     
             // Log the product ids to check
     ///////////////////////////////////////////////////////////////////////////
