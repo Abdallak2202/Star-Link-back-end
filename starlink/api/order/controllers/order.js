@@ -18,7 +18,7 @@ module.exports = {
   create: async (ctx) => {
     console.log("ENTERED THE FUNCTION");
     console.log("CTX.REQUEST.BODY", ctx.request.body);
-    const { address, amount, dishes, token, city, state } = JSON.parse(
+    const { address, amount, products, token, city, state } = JSON.parse(
       ctx.request.body
     );
     const stripeAmount = Math.floor(amount * 100);
@@ -37,7 +37,7 @@ module.exports = {
       charge_id: charge.id,
       amount: stripeAmount,
       address,
-      dishes,
+      products,
       city,
       state,
     });
