@@ -17,7 +17,7 @@
     },
     "payment": {
       "type": "string",
-      "required": true
+      "required": false
     },
     "status": {
       "type": "enumeration",
@@ -27,14 +27,26 @@
         "Error"
       ],
       "default": "Pending",
-      "required": true
+      "required": false
     },
     "created": {
       "type": "datetime",
-      "required": true
+      "required": false
     },
     "updated": {
       "type": "datetime"
+    },
+    "products": {
+      "type": "json"
+    },
+    "amount": {
+      "type": "biginteger"
+    },
+    "address": {
+      "type": "string"
+    },
+    "city": {
+      "type": "string"
     }
   }
 }
