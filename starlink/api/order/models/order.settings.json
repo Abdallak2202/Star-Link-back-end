@@ -47,6 +47,12 @@
     },
     "city": {
       "type": "string"
+    },
+    "receipt_url": {
+      "type": "string"
+    },
+    "charge_id": {
+      "type": "string"
     }
   }
 }
