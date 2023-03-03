@@ -35,13 +35,14 @@ module.exports = {
     const order = await strapi.services.order.create({
       user: ctx.state.user.id,
       charge_id: charge.id,
-      amount: stripeAmount,
+      amount: amount,
       address,
       products,
       city,
       state,
+      receipt_url: charge.receipt_url
     });
-
+    console.log(charge.receipt_url);
     return order;
   },
 };
